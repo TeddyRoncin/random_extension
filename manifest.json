@@ -1,0 +1,20 @@
+{
+  "name": "Random extension",
+  "description": "Don't worry, it does quite random things",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "icon.webp"
+  },
+  "content_scripts": [
+    {
+      "js": ["replace.js"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "js": ["fill_captcha.js"],
+      "matches": ["https://www.cnil.fr/fr/webform/nous-contacter"]
+    }
+  ]
+}
